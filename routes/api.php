@@ -18,15 +18,26 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/cadastrar_usuario','UsersController@cadastrar');
-Route::get('/selecionar_usuario','UsersController@selecionar');
-Route::get('/condicao','UsersController@condicao');
-Route::post('/selecionar_usuario_filhos','UsersController@selecionar_filhos');
+#Routas para User
+Route::post('/cadastrar_usuario','UsersController@cadastrar_usuario');
+Route::get('/selecionar_usuario','UsersController@selecionar_usuario');
 Route::post('/verificar_login','UsersController@verificar_login');
 Route::post('/mostrar_foto','UsersController@mostrar_foto');
 Route::get('/baixar','UsersController@baixar');
 
-Route::post('/add_produto','ProdutosController@cadastrar');
+#Routas para Produto
+Route::post('/add_produto','ProdutosController@add_produto');
 Route::post('/deletar_produto','ProdutosController@deletar_produto');
 Route::get('/selecionar_produtos','ProdutosController@selecionar_produtos');
 
+#Routas para Encomendas
+Route::post('/add_encomenda','EncomendasController@add_encomenda');
+Route::post('/eliminar_encomenda','EncomendasController@eliminar_encomenda');
+Route::post('/editar_encomenda','EncomendasController@editar_encomenda');
+Route::get('/selecionar_todas_encomendas','EncomendasController@selecionar_todas_encomendas');
+Route::post('/selecionar_todas_encomendas_user','EncomendasController@selecionar_todas_encomendas_user');
+
+#Routas para Reações
+Route::get('/selecionar_reacoes','ReacoesController@selecionar_reacoes');
+Route::post('/reagir_produto','ReacoesController@reagir_produto');
+Route::post('/desrreagir_produto','ReacoesController@desrreagir_produto');

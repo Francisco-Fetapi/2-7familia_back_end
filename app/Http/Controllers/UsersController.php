@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Storage;
 
 class UsersController extends Controller
 {
-    public function cadastrar(Request $request){
+    public function cadastrar_usuario(Request $request){
         $user = new User;
 
         #Verificando se já existe o e-mail do usuário em questão
@@ -44,7 +44,7 @@ class UsersController extends Controller
         }
     }
 
-    public function selecionar(){
+    public function selecionar_usuario(){
         $user = User::all();
 
         return $user;
