@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Encomenda extends Model
 {
-    protected $table = 'encomendas';
+    protected $table = "encomendas";
 
     public function usuarios(){
         return $this->hasOne('App\User','id_usuario','id');
