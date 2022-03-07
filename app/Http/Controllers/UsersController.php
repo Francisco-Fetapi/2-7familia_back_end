@@ -26,7 +26,6 @@ class UsersController extends Controller
                 $path = Storage::disk('public')->put('/uploads', $request->file('foto'));
                 $user->foto_user = $path;
             }else $user->foto_user = 'uploads/user.jpg';
-
             $user->save();
 
             return $user->id;
@@ -51,11 +50,11 @@ class UsersController extends Controller
         return $user;
     }
 
-    public function enviarFoto(Request $request){
+    public function mostrar_foto(Request $request){
         if($request->file('foto')){
             $path = Storage::disk('public')->put('/uploads', $request->file('foto'));
 
-            return $path;
+            return asset($path);
         }else return 'Não mandaste nada';
     }
 

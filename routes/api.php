@@ -23,6 +23,10 @@ Route::get('/selecionar_usuario','UsersController@selecionar');
 Route::get('/condicao','UsersController@condicao');
 Route::post('/selecionar_usuario_filhos','UsersController@selecionar_filhos');
 Route::post('/verificar_login','UsersController@verificar_login');
-Route::post('/enviar_foto','UsersController@enviarFoto');
+Route::post('/mostrar_foto','UsersController@mostrar_foto');
 Route::get('/baixar','UsersController@baixar');
+
+Route::post('/add_produto','ProdutosController@cadastrar');
+Route::post('/deletar_produto','ProdutosController@deletar_produto');
+Route::get('/selecionar_produtos','ProdutosController@selecionar_produtos');
 
