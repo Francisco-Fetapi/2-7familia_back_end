@@ -44,4 +44,4 @@ Route::post('/reagir_produto','ReacoesController@reagir_produto');
 Route::post('/desrreagir_produto','ReacoesController@desrreagir_produto');
 
 #Rotas para Admin
-Route::post('/verificar_login_admin','UsersController@verificar_login');
+Route::post('/verificar_login_admin','AdminsControllers@verificar_login');
