@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Storage;
 
 class ProdutosController extends Controller
 {
-    public function cadastrar(Request $request){
+    public function add_produto(Request $request){
         $produtos = new Produto;
         $produtos->nome_produto = $request->nome_produto;
         $produtos->preco = $request->preco;
@@ -19,12 +19,23 @@ class ProdutosController extends Controller
         $produtos->foto_produto = $path;
 
         $produtos->save();
+    }
+    public function editar_produto(Request $request){
+        $produtos = Produto::find($request->id_produto);
+        $produtos->nome_produto = $request->nome_produto;
+        $produtos->preco = $request->preco;
+        $produtos->categoria = $request->categoria;
+        $produtos->descricao = $request->descricao;
 
-        // dd($request->all());
+        if($request->file('foto')){
+            $path = Storage::disk('public')->put('/uploads', $request->file('foto'));
+            $produtos->foto_produto = $path;
+        }
+
+        $produtos->save();
     }
     public function selecionar_produtos(){
         $produtos = Produto::all();
-
         return $produtos;
     }
 

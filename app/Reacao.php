@@ -9,9 +9,9 @@ class Reacao extends Model
     protected $table = "reacaos";
 
     public function usuarios(){
-        return $this->hasOne('App\User','id_usuario','id');
+        return $this->hasOne('App\User','id','id_usuario');
     }
     public function produtos(){
-        return $this->hasOne('App\Produto','id_produto','id');
+        return $this->hasOne('App\Produto','id','id_produto');
     }
 }

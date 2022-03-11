@@ -28,6 +28,7 @@ Route::get('/baixar','UsersController@baixar');
 #Routas para Produto
 Route::post('/add_produto','ProdutosController@add_produto');
 Route::post('/deletar_produto','ProdutosController@deletar_produto');
+Route::post('/editar_produto','ProdutosController@editar_produto');
 Route::get('/selecionar_produtos','ProdutosController@selecionar_produtos');
 
 #Routas para Encomendas
