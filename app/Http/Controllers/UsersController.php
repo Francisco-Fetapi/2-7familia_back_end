@@ -44,7 +44,7 @@ class UsersController extends Controller
         }
     }
 
-    public function selecionar_usuario(){
+    public function selecionar_usuarios(){
         $user = User::all();
 
         return $user;

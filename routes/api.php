@@ -20,7 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 #Routas para User
 Route::post('/cadastrar_usuario','UsersController@cadastrar_usuario');
-Route::get('/selecionar_usuario','UsersController@selecionar_usuario');
+Route::get('/selecionar_usuarios','UsersController@selecionar_usuarios');
 Route::post('/verificar_login','UsersController@verificar_login');
 Route::post('/mostrar_foto','UsersController@mostrar_foto');
 Route::get('/baixar','UsersController@baixar');
@@ -35,8 +35,7 @@ Route::get('/selecionar_produtos','ProdutosController@selecionar_produtos');
 Route::post('/add_encomenda','EncomendasController@add_encomenda');
 Route::post('/eliminar_encomenda','EncomendasController@eliminar_encomenda');
 Route::post('/editar_encomenda','EncomendasController@editar_encomenda');
-Route::get('/selecionar_todas_encomendas','EncomendasController@selecionar_todas_encomendas');
-Route::post('/selecionar_todas_encomendas_user','EncomendasController@selecionar_todas_encomendas_user');
+Route::get('/selecionar_encomendas','EncomendasController@selecionar_encomendas');
 
 #Routas para Reações
 Route::get('/selecionar_reacoes','ReacoesController@selecionar_reacoes');
@@ -45,3 +44,5 @@ Route::post('/desrreagir_produto','ReacoesController@desrreagir_produto');
 
 #Rotas para Admin
 Route::post('/verificar_login_admin','AdminsControllers@verificar_login');
+Route::post('/cadastrar_admin','AdminsControllers@cadastrar');
+Route::get('/selecionar_admins','AdminsControllers@selecionar_admins');
