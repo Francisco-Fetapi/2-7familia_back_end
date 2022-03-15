@@ -41,6 +41,7 @@ Route::get('/selecionar_encomendas','EncomendasController@selecionar_encomendas'
 Route::get('/selecionar_reacoes','ReacoesController@selecionar_reacoes');
 Route::post('/reagir_produto','ReacoesController@reagir_produto');
 Route::post('/desrreagir_produto','ReacoesController@desrreagir_produto');
+Route::get('/selecionar_produtos_adorados','ReacoesController@selecionar_produtos_adorados');
 
 #Rotas para Admin
 Route::post('/verificar_login_admin','AdminsControllers@verificar_login');

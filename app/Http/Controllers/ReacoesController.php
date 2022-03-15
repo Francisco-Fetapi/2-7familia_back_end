@@ -38,4 +38,11 @@ class ReacoesController extends Controller
 
         return $reacao;
     }
+
+    public function selecionar_produtos_adorados(){
+        $dados = Reacao::with('produtos')->where('id_usuario',2)
+        ->get();
+
+        return $dados;
+    }
 }
