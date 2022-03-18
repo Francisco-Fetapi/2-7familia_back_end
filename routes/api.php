@@ -30,6 +30,7 @@ Route::post('/add_produto','ProdutosController@add_produto');
 Route::post('/deletar_produto','ProdutosController@deletar_produto');
 Route::post('/editar_produto','ProdutosController@editar_produto');
 Route::get('/selecionar_produtos','ProdutosController@selecionar_produtos');
+Route::post('/selecionar_produto','ProdutosController@selecionar_produto');
 
 #Routas para Encomendas
 Route::post('/add_encomenda','EncomendasController@add_encomenda');

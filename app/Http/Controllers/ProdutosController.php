@@ -38,6 +38,10 @@ class ProdutosController extends Controller
         $produtos = Produto::all();
         return $produtos;
     }
+    public function selecionar_produto(Request $request){
+        $produtos = Produto::find($request->produto_id);
+        return $produtos;
+    }
 
     public function deletar_produto(Request $request){
         $produto = Produto::find($request->id_produto);
