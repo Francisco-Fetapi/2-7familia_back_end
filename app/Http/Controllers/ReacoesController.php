@@ -45,4 +45,8 @@ class ReacoesController extends Controller
 
         return $dados;
     }
+    public function selecionar_reacoes_produto(Request $request){
+        $produto = Reacao::all()->where('id_produto', $request->id_produto);
+        return $produto;
+    }
 }
