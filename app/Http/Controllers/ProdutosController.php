@@ -41,7 +41,7 @@ class ProdutosController extends Controller
     }
     public function selecionar_produto(Request $request){
         $produtos = Produto::find($request->produto_id);
-        return $produtos;
+        return [$produtos];
     }
 
     public function deletar_produto(Request $request){
