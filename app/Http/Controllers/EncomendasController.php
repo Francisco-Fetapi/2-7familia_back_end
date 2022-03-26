@@ -28,4 +28,9 @@ class EncomendasController extends Controller
         $encomendas = Encomenda::all();
         return  $encomendas;
     }
+
+    public function selecionar_encomendas_usuario(Request $request){
+        $encomendas = Encomenda::where('id_usuario',$request->id_usuario)->get();
+        return $encomendas;
+    }
 }

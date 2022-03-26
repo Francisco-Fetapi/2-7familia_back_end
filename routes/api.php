@@ -36,6 +36,7 @@ Route::post('/selecionar_produto','ProdutosController@selecionar_produto');
 Route::post('/add_encomenda','EncomendasController@add_encomenda');
 Route::post('/eliminar_encomenda','EncomendasController@eliminar_encomenda');
 Route::post('/editar_encomenda','EncomendasController@editar_encomenda');
+Route::post('/selecionar_encomendas_usuario','EncomendasController@selecionar_encomendas_usuario');
 Route::get('/selecionar_encomendas','EncomendasController@selecionar_encomendas');
 
 #Routas para Reações
