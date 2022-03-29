@@ -44,6 +44,12 @@ class ProdutosController extends Controller
         return [$produtos];
     }
 
+    public function selecionar_produtos_filtro(Request $request){
+        $produtos = Produto::where('nome_produto','LIKE','%'.$request->busca.'%')->get();
+
+        return $produtos;
+    }
+
     public function deletar_produto(Request $request){
         $produto = Produto::find($request->id_produto);
         if($produto) {
