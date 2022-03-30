@@ -45,7 +45,7 @@ class ProdutosController extends Controller
     }
 
     public function selecionar_produtos_filtro(Request $request){
-        $produtos = Produto::where('nome_produto','LIKE','%'.$request->busca.'%')->get();
+        $produtos = Produto::where('nome_produto','LIKE','%'.$request->palavra.'%')->get();
 
         return $produtos;
     }
