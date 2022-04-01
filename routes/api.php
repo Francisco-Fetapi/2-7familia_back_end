@@ -21,6 +21,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 #Routas para User
 Route::post('/cadastrar_usuario','UsersController@cadastrar_usuario');
 Route::get('/selecionar_usuarios','UsersController@selecionar_usuarios');
+Route::post('/selecionar_usuario','UsersController@selecionar_usuario');
 Route::post('/verificar_login','UsersController@verificar_login');
 Route::post('/mostrar_foto','UsersController@mostrar_foto');
 Route::get('/baixar','UsersController@baixar');

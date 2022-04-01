@@ -49,6 +49,10 @@ class UsersController extends Controller
 
         return $user;
     }
+    public function selecionar_usuario(Request $request){
+        $user = User::where('id',$request->id)->get();
+        return $user;
+    }
 
     public function mostrar_foto(Request $request){
         if($request->file('foto')){
