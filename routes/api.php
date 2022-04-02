@@ -57,3 +57,8 @@ Route::get('/selecionar_admins','AdminsControllers@selecionar_admins');
 #Rotas para Comentários
 Route::post('/comentar','ComentariosController@comentar');
 Route::post('/selecionar_comentarios_produto','ComentariosController@selecionar_comentarios_produto');
+
+#Rotas para Mensagens
+Route::post('/enviar_mensagem','MensagensController@enviar_mensagem');
+Route::get('/selecionar_mensagens','MensagensController@selecionar_mensagem');
+
