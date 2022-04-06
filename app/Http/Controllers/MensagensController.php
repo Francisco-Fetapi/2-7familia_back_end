@@ -11,15 +11,13 @@ class MensagensController extends Controller
         $mensagem = new Mensagem;
         $mensagem->id_usuario = $request->id_usuario;
         $mensagem->conteudo = $request->conteudo;
-
         $mensagem->save();
 
         return Mensagem::all();
     }
 
     public function selecionar_mensagem(){
-        $mensagem = Mensagem::with('usuarios')->get();
-
-        return $mensagem;
+        $mensagems = Mensagem::with('usuarios')->get();
+        return $mensagems;
     }
 }
