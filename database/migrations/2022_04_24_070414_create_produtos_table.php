@@ -17,10 +17,12 @@ class CreateProdutosTable extends Migration
             $table->id();
             $table->string('nome_produto');
             $table->decimal('preco');
-            $table->string('categoria');
+            $table->unsignedBigInteger('id_categoria');
             $table->text('descricao');
             $table->string('foto_produto');
             $table->timestamps();
+
+            $table->foreign('id_categoria')->references('id')->on('categorias')->onDelete('cascade');
         });
     }
 

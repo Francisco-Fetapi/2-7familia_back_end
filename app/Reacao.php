@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Reacao extends Model
 {
-    protected $table = "reacaos";
+    protected $table = 'reacaos';
 
     public function usuarios(){
         return $this->hasOne('App\User','id','id_usuario');

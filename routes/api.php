@@ -62,3 +62,5 @@ Route::post('/selecionar_comentarios_produto','ComentariosController@selecionar_
 Route::post('/enviar_mensagem','MensagensController@enviar_mensagem');
 Route::get('/selecionar_mensagens','MensagensController@selecionar_mensagem');
 
+#Rotas para Categoria
+Route::post('/add_categoria', 'CategoriasController@add_categoria');
