@@ -14,7 +14,7 @@ class ProdutosController extends Controller
         $produtos = new Produto;
         $produtos->nome_produto = $request->nome_produto;
         $produtos->preco = $request->preco;
-        $produtos->categoria = $request->categoria;
+        $produtos->id_categoria = $request->id_categoria;
         $produtos->descricao = $request->descricao;
         $path = Storage::disk('public')->put('/uploads', $request->file('foto'));
         $produtos->foto_produto = $path;
@@ -25,7 +25,7 @@ class ProdutosController extends Controller
         $produtos = Produto::find($request->id_produto);
         $produtos->nome_produto = $request->nome_produto;
         $produtos->preco = $request->preco;
-        $produtos->categoria = $request->categoria;
+        $produtos->id_categoria = $request->id_categoria;
         $produtos->descricao = $request->descricao;
 
         if($request->file('foto')){
@@ -46,7 +46,6 @@ class ProdutosController extends Controller
 
     public function selecionar_produtos_filtro(Request $request){
         $produtos = Produto::where('nome_produto','LIKE','%'.$request->palavra.'%')->get();
-
         return $produtos;
     }
 
