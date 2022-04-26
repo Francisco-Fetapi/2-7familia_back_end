@@ -36,12 +36,12 @@ class ProdutosController extends Controller
         $produtos->save();
     }
     public function selecionar_produtos(){
-        $produtos = Produto::all();
+        $produtos = Produto::with('categoria')->get();
         return $produtos;
     }
     public function selecionar_produto(Request $request){
-        $produtos = Produto::find($request->produto_id);
-        return [$produtos];
+        $produtos = Produto::with('categoria')->where('id',$request->produto_id)->get();
+        return $produtos;
     }
 
     public function selecionar_produtos_filtro(Request $request){
